@@ -219,6 +219,9 @@
   "go.autocompleteUnimportedPackages": true,
   "go.testEnvFile": "",
   "go.toolsManagement.autoUpdate": true,
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+  },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -250,5 +253,7 @@
     // "editorWarning.foreground": "#00000000",
     // "editorInfo.foreground": "#00000000",
   },
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Default Dark+",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "explorer.confirmDelete": false,
 }
