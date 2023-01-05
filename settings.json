@@ -209,9 +209,6 @@
   "window.closeWhenEmpty": true,
   "diffEditor.renderIndicators": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "go.buildFlags": [
     "-v"
   ],
@@ -219,6 +216,9 @@
   "go.autocompleteUnimportedPackages": true,
   "go.testEnvFile": "",
   "go.toolsManagement.autoUpdate": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
   },
