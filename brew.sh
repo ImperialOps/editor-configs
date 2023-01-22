@@ -16,4 +16,5 @@ brew install terraform \
   kind \
   helm \
   skaffold \
-  kubernetes-cli
+  kubernetes-cli \
+  ipcalc
