@@ -1,5 +1,23 @@
 {
+  "telemetry.telemetryLevel": "off",
   "breadcrumbs.enabled": false,
+  "extensions.ignoreRecommendations": true,
+  "workbench.colorCustomizations": {
+    // "editorError.foreground": "#3a2525",
+    // "editorWarning.foreground": "#00000000",
+    // "editorInfo.foreground": "#00000000",
+  },
+  "workbench.enableExperiments": false,
+  "workbench.activityBar.visible": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Default Dark+",
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "window.closeWhenEmpty": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "diffEditor.renderSideBySide": false,
+  "diffEditor.renderIndicators": false,
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.horizontal": "hidden",
   "editor.fontSize": 14,
@@ -24,27 +42,33 @@
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
   "editor.cursorStyle": "block",
-  "editor.lineNumbers": "off",
+  "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 10,
   "editor.cursorBlinking": "solid",
   "editor.folding": false,
   "editor.autoClosingBrackets": "never",
   "editor.insertSpaces": false,
   "editor.formatOnSave": true,
-  "diffEditor.renderSideBySide": false,
+  "editor.tabSize": 4,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "editor.guides.indentation": false,
   // Vim setup
   "vim.enableNeovim": false,
+  "vim.neovimUseConfigFile": true,
   "vim.searchHighlightColor": "rgba(150, 255, 255, 0.3)",
   "vim.leader": "<space>",
   "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
   "vim.cursorStylePerMode.replace": "block-outline",
   "vim.cursorStylePerMode.visual": "block-outline",
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "vim.cursorStylePerMode.visualline": "block-outline",
   "vim.easymotion": true,
-  "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
-  "vim.hlsearch": true,
+  "vim.hlsearch": false,
+  "vim.incsearch": true,
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
@@ -122,18 +146,6 @@
     {
       "before": [
         "<leader>",
-        "x"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.terminal.toggleTerminal"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
         "o"
       ],
       "after": [],
@@ -204,20 +216,20 @@
       ]
     },
   ],
-  "workbench.startupEditor": "newUntitledFile",
+  // languages
   "javascript.format.enable": false,
-  "window.closeWhenEmpty": true,
-  "diffEditor.renderIndicators": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "go.buildFlags": [
-    "-v"
-  ],
+  "go.buildFlags": ["-v"],
   "go.useLanguageServer": true,
   "go.autocompleteUnimportedPackages": true,
   "go.testEnvFile": "",
   "go.toolsManagement.autoUpdate": true,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
@@ -231,29 +243,4 @@
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "editor.cursorSurroundingLines": 10,
-  "workbench.enableExperiments": false,
-  "workbench.activityBar.visible": false,
-  "explorer.compactFolders": false,
-  "telemetry.telemetryLevel": "off",
-  "vim.cursorStylePerMode.normal": "block",
-  "vim.neovimUseConfigFile": true,
-  "explorer.confirmDragAndDrop": false,
-  "editor.tabSize": 4,
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.wordWrap": "off",
-  "extensions.ignoreRecommendations": true,
-  "editor.guides.indentation": false,
-  "workbench.colorCustomizations": {
-    // "editorError.foreground": "#3a2525",
-    // "editorWarning.foreground": "#00000000",
-    // "editorInfo.foreground": "#00000000",
-  },
-  "workbench.colorTheme": "Default Dark+",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "explorer.confirmDelete": false,
 }
