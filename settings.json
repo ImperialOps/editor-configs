@@ -220,7 +220,9 @@
   "javascript.format.enable": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "go.buildFlags": ["-v"],
+  "go.buildFlags": [
+    "-v"
+  ],
   "go.useLanguageServer": true,
   "go.autocompleteUnimportedPackages": true,
   "go.testEnvFile": "",
