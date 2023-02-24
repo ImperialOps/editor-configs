@@ -1,9 +1,19 @@
+set nohlsearch
+set rnu
+set incsearch
+set smartindent
 set expandtab
-" show existing tab with 2 spaces width
-set tabstop=2
-set softtabstop=2
-" when indenting with '>', use 2 spaces width
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set scrolloff=10
+set guicursor=n:block
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
-set number
+let mapleader = " "
+
 inoremap jj <ESC>
+
+nnoremap <leader>s :w<CR>
+nnoremap <leader>w :q<CR>
