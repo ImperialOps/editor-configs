@@ -88,22 +88,24 @@
     {
       "before": [
         "<leader>",
-        "d"
-      ],
-      "after": [
-        "d",
-        "d"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
         "s"
       ],
       "after": [],
       "commands": [
         {
           "command": "workbench.action.files.save"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.closeActiveEditor"
         }
       ]
     },
@@ -146,7 +148,20 @@
     {
       "before": [
         "<leader>",
-        "o"
+        "v"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditor"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "p",
+        "f"
       ],
       "after": [],
       "commands": [
@@ -158,24 +173,64 @@
     {
       "before": [
         "<leader>",
-        "w"
+        "p",
+        "x"
       ],
       "after": [],
       "commands": [
         {
-          "command": "workbench.action.closeActiveEditor"
+          "command": "workbench.view.extensions"
         }
       ]
     },
     {
       "before": [
         "<leader>",
-        "v"
+        "p",
+        "e"
       ],
       "after": [],
       "commands": [
         {
-          "command": "workbench.action.splitEditor"
+          "command": "workbench.view.explorer"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "p",
+        "n"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "welcome.showNewFileEntries"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "p",
+        "s"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.replaceInFiles"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "0"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
         }
       ]
     },
@@ -214,7 +269,7 @@
           "command": "workbench.action.focusThirdEditorGroup"
         }
       ]
-    },
+    }
   ],
   // languages
   "javascript.format.enable": false,
