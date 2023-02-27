@@ -17,4 +17,6 @@ brew install terraform \
   helm \
   skaffold \
   kubernetes-cli \
-  ipcalc
+  ipcalc \
+  neovim \
+  ripgrep
