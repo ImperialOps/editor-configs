@@ -1,0 +1,2 @@
+vim.g.neoterm_default_mod = 'botright'
+vim.g.neoterm_size = '10'
