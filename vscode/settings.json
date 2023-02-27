@@ -87,6 +87,24 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
+        "<C-u>"
+      ],
+      "after": [
+        "<C-u>",
+        "zz"
+      ]
+    },
+    {
+      "before": [
+        "<C-d>"
+      ],
+      "after": [
+        "<C-d>",
+        "zz"
+      ]
+    },
+    {
+      "before": [
         "<leader>",
         "s"
       ],
