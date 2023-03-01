@@ -7,6 +7,7 @@ lsp.ensure_installed({
   'terraformls',
   'jedi_language_server',
   'tsserver',
+  'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim'
