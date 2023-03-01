@@ -70,7 +70,9 @@
   "vim.hlsearch": false,
   "vim.incsearch": true,
   "vim.handleKeys": {
-    "<C-a>": false,
+    "<C-a>": true,
+    "<C-d>": true,
+    "<C-u>": true,
     "<C-f>": false
   },
   "vim.insertModeKeyBindings": [
@@ -91,7 +93,8 @@
       ],
       "after": [
         "<C-u>",
-        "zz"
+        "z",
+        "z"
       ]
     },
     {
@@ -100,7 +103,8 @@
       ],
       "after": [
         "<C-d>",
-        "zz"
+        "z",
+        "z"
       ]
     },
     {
