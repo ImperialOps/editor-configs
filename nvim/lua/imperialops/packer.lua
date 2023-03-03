@@ -27,7 +27,9 @@ return require('packer').startup(function(use)
       end
   })
 
-  use("kassio/neoterm")
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+      require("toggleterm").setup()
+  end}
 
   use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
   use("theprimeagen/harpoon")
