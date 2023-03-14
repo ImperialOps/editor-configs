@@ -45,7 +45,7 @@
   "editor.lineNumbers": "relative",
   "editor.cursorSurroundingLines": 10,
   "editor.cursorBlinking": "solid",
-  "editor.folding": false,
+  "editor.folding": true,
   "editor.autoClosingBrackets": "never",
   "editor.insertSpaces": false,
   "editor.formatOnSave": true,
