@@ -292,7 +292,19 @@
         }
       ]
     },
-    // commands
+    // terminal
+    {
+      "before": [
+        "<leader>",
+        "t"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.terminal.toggleTerminal"
+        }
+      ],
+    },
     {
       "before": [
         "<leader>",
