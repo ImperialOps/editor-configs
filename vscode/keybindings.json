@@ -17,6 +17,11 @@
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
+        "key": "j k",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocus"
+    },
+    {
         "key": "ctrl+'",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "terminal.active"
@@ -25,10 +30,5 @@
         "key": "ctrl+`",
         "command": "-workbench.action.terminal.toggleTerminal",
         "when": "terminal.active"
-    },
-    {
-        "key": "j k",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "terminalFocus"
     },
 ]
