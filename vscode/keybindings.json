@@ -27,8 +27,8 @@
         "when": "terminal.active"
     },
     {
-		"key": "j k",
-		"command": "workbench.action.terminal.toggleTerminal",
-		"when": "terminalFocus"
-	},
+        "key": "j k",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocus"
+    },
 ]
