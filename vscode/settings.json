@@ -291,7 +291,67 @@
           "command": "workbench.action.focusThirdEditorGroup"
         }
       ]
-    }
+    },
+    // commands
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "b"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "!!\u000D"
+          }
+        },
+        {
+          "command": "workbench.action.terminal.toggleTerminal"
+        }
+      ],
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "t",
+        "f"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "terraform fmt -recursive\u000D"
+          }
+        },
+        {
+          "command": "workbench.action.terminal.toggleTerminal"
+        }
+      ],
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "r",
+        "f"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "cargo fmt\u000D"
+          }
+        },
+        {
+          "command": "workbench.action.terminal.toggleTerminal"
+        }
+      ],
+    },
   ],
   // languages
   "javascript.format.enable": false,
