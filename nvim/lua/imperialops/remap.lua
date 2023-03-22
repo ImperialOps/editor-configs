@@ -44,6 +44,4 @@ vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l")
 vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>")
 
 -- terminal execs
-vim.keymap.set("n", "<leader>cb", '<cmd>TermExec cmd="!!"<CR>')
-vim.keymap.set("n", "<leader>ctf", '<cmd>TermExec cmd="terraform fmt -recursive"<CR>')
-vim.keymap.set("n", "<leader>cr", '<cmd>TermExec cmd="cargo run"<CR>')
+vim.keymap.set("n", "<leader>rb", '<cmd>TermExec cmd="!!"<CR>')
