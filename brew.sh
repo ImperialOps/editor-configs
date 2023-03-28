@@ -21,4 +21,5 @@ brew install terraform \
   kubeconform \
   ipcalc \
   neovim \
-  ripgrep
+  ripgrep \
+  tree
