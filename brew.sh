@@ -22,4 +22,5 @@ brew install terraform \
   ipcalc \
   neovim \
   ripgrep \
+  xsel \
   tree
