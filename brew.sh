@@ -23,4 +23,5 @@ brew install terraform \
   neovim \
   ripgrep \
   xsel \
-  tree
+  tree \
+  jq
