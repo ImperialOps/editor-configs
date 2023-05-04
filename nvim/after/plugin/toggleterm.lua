@@ -1,5 +1,5 @@
 require'toggleterm'.setup {
-  size = 30,
+  size = 44,
   shade_terminals = false
 }
 
