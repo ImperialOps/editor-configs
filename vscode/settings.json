@@ -47,7 +47,7 @@
   "editor.cursorBlinking": "solid",
   "editor.folding": true,
   "editor.autoClosingBrackets": "never",
-  "editor.insertSpaces": false,
+  "editor.insertSpaces": true,
   "editor.formatOnSave": true,
   "editor.tabSize": 4,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
@@ -384,7 +384,8 @@
   },
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
