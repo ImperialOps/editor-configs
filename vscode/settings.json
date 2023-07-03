@@ -183,6 +183,18 @@
     {
       "before": [
         "<leader>",
+        "x"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditorDown"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
         "p",
         "f"
       ],
@@ -293,78 +305,18 @@
         }
       ]
     },
-    // terminal
     {
       "before": [
         "<leader>",
-        "t"
+        "4"
       ],
       "after": [],
       "commands": [
         {
-          "command": "workbench.action.terminal.toggleTerminal"
+          "command": "workbench.action.focusFourthEditorGroup"
         }
-      ],
-    },
-    {
-      "before": [
-        "<leader>",
-        "c",
-        "b"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.terminal.sendSequence",
-          "args": {
-            "text": "!!\u000D"
-          }
-        },
-        {
-          "command": "workbench.action.terminal.toggleTerminal"
-        }
-      ],
-    },
-    {
-      "before": [
-        "<leader>",
-        "c",
-        "t",
-        "f"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.terminal.sendSequence",
-          "args": {
-            "text": "terraform fmt -recursive\u000D"
-          }
-        },
-        {
-          "command": "workbench.action.terminal.toggleTerminal"
-        }
-      ],
-    },
-    {
-      "before": [
-        "<leader>",
-        "c",
-        "r",
-        "f"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.terminal.sendSequence",
-          "args": {
-            "text": "cargo fmt\u000D"
-          }
-        },
-        {
-          "command": "workbench.action.terminal.toggleTerminal"
-        }
-      ],
-    },
+      ]
+    }
   ],
   // languages
   "javascript.format.enable": false,
@@ -383,9 +335,15 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.formatOnSave": true,
+    "editor.wordBasedSuggestions": false,
+    "editor.tabSize": 4
+  },
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.tabSize": 2
   },
   "[typescriptreact]": {
