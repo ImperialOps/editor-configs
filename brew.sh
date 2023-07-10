@@ -24,4 +24,5 @@ brew install terraform \
   ripgrep \
   xsel \
   tree \
-  jq
+  jq \
+  tmux
