@@ -6,7 +6,6 @@ sudo apt update
 sudo apt install -y \
     zip \
     git \
-    tmux \
     build-essential
 
 git config --global user.name "Josh B"

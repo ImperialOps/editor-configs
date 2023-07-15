@@ -2,14 +2,17 @@
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install terraform \
+brew install \
+  terraform \
   infracost \
   tflint \
   terraform-docs \
   infracost \
   pre-commit \
   commitizen \
+  node \
   go \
+  rust \
   awscli \
   aws-iam-authenticator \
   binutils \
