@@ -16,16 +16,17 @@ brew install \
   awscli \
   aws-iam-authenticator \
   binutils \
-  kind \
-  helm \
-  skaffold \
   kubernetes-cli \
   kustomize \
   kubeconform \
+  kind \
+  helm \
+  skaffold \
   ipcalc \
   neovim \
   ripgrep \
   xsel \
   tree \
   jq \
+  yq \
   tmux
