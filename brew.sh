@@ -18,6 +18,7 @@ brew install \
   binutils \
   kubernetes-cli \
   kustomize \
+  k9s \
   kubeconform \
   kind \
   helm \
