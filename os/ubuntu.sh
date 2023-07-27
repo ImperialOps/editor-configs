@@ -6,7 +6,8 @@ sudo apt update
 sudo apt install -y \
     zip \
     git \
-    build-essential
+    build-essential \
+    xclip
 
 git config --global user.name "Josh B"
 git config --global user.email "josh9398@hotmail.com"
