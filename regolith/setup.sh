@@ -6,7 +6,7 @@ sudo apt install -y \
     gnome-screenshot \
     xclip
 # Set keyboard shortcut
-# Settings -> Keyboard -> View and Customize Shortcuts -> Custom Shortcuts
+# Settings -> Keyboard -> View and Customize Shortcuts -> Custom Shortcuts > Ctrl + Shift + Print
 # sh -c "gnome-screenshot -c -a -f /tmp/test && cat /tmp/test | xclip -i -selection clipboard -target image/png"
 
 sudo apt install -y \
