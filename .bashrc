@@ -1,3 +1,6 @@
+# brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # aliases
 alias k=kubectl
 alias tff="terraform fmt -recursive"
