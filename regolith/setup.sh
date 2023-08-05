@@ -10,6 +10,7 @@ sudo apt install -y \
 # sh -c "gnome-screenshot -c -a -f /tmp/test && cat /tmp/test | xclip -i -selection clipboard -target image/png"
 
 sudo apt install -y \
+    regolith-compositor-picom-glx \
     i3xrocks-rofication \
     i3xrocks-cpu-usage \
     i3xrocks-memory \
