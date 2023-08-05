@@ -20,4 +20,5 @@ sudo apt install -y regolith-look-*
 
 sudo apt remove -y i3xrocks-net-traffic
 
+mkdir -p ~/.config/regolith2
 echo "i3-wm.bar.position:  top" >> ~/.config/regolith2/Xresources
