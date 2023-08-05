@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# /etc/sudoers
+# username ALL=(ALL) NOPASSWD:ALL
+
 sudo apt update
 
 # essentials
