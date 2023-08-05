@@ -7,6 +7,7 @@ sudo apt update
 
 # essentials
 sudo apt install -y \
+    curl \
     vim \
     zip \
     git \
