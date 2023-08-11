@@ -12,6 +12,7 @@ sudo apt install -y \
     zip \
     git \
     build-essential \
+    bubblewrap \
     xclip
 
 git config --global user.name "Josh B"
