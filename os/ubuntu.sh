@@ -22,38 +22,7 @@ git config --global init.defaultBranch "main"
 curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
 
-# brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install \
-  terraform \
-  infracost \
-  tflint \
-  terraform-docs \
-  infracost \
-  pre-commit \
-  commitizen \
-  node \
-  go \
-  rust \
-  opam \
-  awscli \
-  aws-iam-authenticator \
-  binutils \
-  kubernetes-cli \
-  kustomize \
-  k9s \
-  kubeconform \
-  kind \
-  helm \
-  skaffold \
-  ipcalc \
-  neovim \
-  ripgrep \
-  xsel \
-  tree \
-  jq \
-  yq \
-  tmux
+# Install brew
 
 # ocaml
 sudo apt install -y bubblewrap
