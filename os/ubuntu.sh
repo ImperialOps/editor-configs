@@ -12,8 +12,10 @@ sudo apt install -y \
     zip \
     git \
     build-essential \
-    bubblewrap \
     xclip
+
+# ocaml
+sudo apt install -y bubblewrap
 
 git config --global user.name "Josh B"
 git config --global user.email "josh9398@hotmail.com"
