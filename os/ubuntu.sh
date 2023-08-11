@@ -28,3 +28,4 @@ sh Miniconda3-latest-Linux-x86_64.sh
 sudo apt install -y bubblewrap
 opam init
 opam install dune merlin ocaml-lsp-server odoc ocamlformat utop dune-release
+opam user-setup install
