@@ -13,6 +13,7 @@ brew install \
   node \
   go \
   rust \
+  opam \
   awscli \
   aws-iam-authenticator \
   binutils \
