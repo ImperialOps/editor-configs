@@ -8,6 +8,7 @@ lsp.ensure_installed({
   'jedi_language_server',
   'tsserver',
   'rust_analyzer',
+  'ocamllsp',
 })
 
 local cmp = require('cmp')
