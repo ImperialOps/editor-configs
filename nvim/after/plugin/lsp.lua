@@ -10,6 +10,7 @@ lsp.ensure_installed({
   'tsserver',
   'rust_analyzer',
   'ocamllsp',
+  'lua_ls',
 })
 
 local cmp = require('cmp')
@@ -38,7 +39,7 @@ lsp.set_preferences({
     }
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -53,7 +54,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-lsp.setup()
+require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 require('lspconfig').terraformls.setup{}
 vim.api.nvim_create_autocmd({"BufWritePre"}, {
@@ -62,6 +63,8 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {
     vim.lsp.buf.format()
   end,
 })
+
+lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true
