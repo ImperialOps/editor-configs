@@ -45,3 +45,6 @@ vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>")
 
 -- terminal execs
 vim.keymap.set("n", "<leader>rb", '<cmd>TermExec cmd="!!"<CR>')
+
+-- code
+vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err")
