@@ -11,6 +11,7 @@ lsp.ensure_installed({
   'rust_analyzer',
   'ocamllsp',
   'lua_ls',
+  'tailwindcss',
 })
 
 local cmp = require('cmp')
