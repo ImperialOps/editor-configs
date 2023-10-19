@@ -55,7 +55,9 @@ brew install \
   tmux
 
 # neovim requirements
-npm i -g bash-language-server
+npm i -g \
+  bash-language-server \
+  @tailwindcss/language-server
 brew install \
   neovim \
   shellcheck \
