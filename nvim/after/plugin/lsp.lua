@@ -9,7 +9,6 @@ lsp.ensure_installed({
   'jedi_language_server',
   'tsserver',
   'rust_analyzer',
-  'ocamllsp',
   'lua_ls',
   'tailwindcss',
 })
