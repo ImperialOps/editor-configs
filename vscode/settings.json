@@ -8,7 +8,6 @@
     // "editorInfo.foreground": "#00000000",
   },
   "workbench.enableExperiments": false,
-  "workbench.activityBar.visible": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Default Dark+",
   "explorer.compactFolders": false,
@@ -32,7 +31,7 @@
     "comments": "#2ea542",
   },
   // Suggestions
-  "editor.wordBasedSuggestions": false,
+  "editor.wordBasedSuggestions": "off",
   "editor.acceptSuggestionOnEnter": "on",
   "editor.quickSuggestions": {
     "other": true,
@@ -52,7 +51,7 @@
   "editor.formatOnSave": true,
   "editor.tabSize": 4,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.wordWrap": "off",
+  "editor.wordWrap": "on",
   "editor.guides.indentation": false,
   // Vim setup
   "vim.enableNeovim": false,
@@ -260,6 +259,32 @@
     {
       "before": [
         "<leader>",
+        "g",
+        "c"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "continue.focusContinueInputWithoutClear"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "p",
+        "c"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.closeSidebar"
+        },
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
         "0"
       ],
       "after": [],
@@ -338,7 +363,7 @@
   "[python]": {
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.formatOnSave": true,
-    "editor.wordBasedSuggestions": false,
+    "editor.wordBasedSuggestions": "off",
     "editor.tabSize": 4
   },
   "[terraform]": {
@@ -355,4 +380,6 @@
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
+  "workbench.activityBar.location": "hidden",
+  "dart.flutterSdkPath": "/Users/joshb/workspace/flutter/flutter",
 }
