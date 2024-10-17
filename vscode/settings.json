@@ -194,6 +194,18 @@
     {
       "before": [
         "<leader>",
+        "e"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.showHover"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
         "p",
         "f"
       ],
