@@ -212,7 +212,6 @@
     {
       "before": [
         "<leader>",
-        "g",
         "c"
       ],
       "commands": [
@@ -226,7 +225,8 @@
         "q"
       ],
       "commands": [
-        "workbench.action.toggleSidebarVisibility"
+        "workbench.action.closeSidebar",
+        "workbench.action.closeAuxiliaryBar"
       ]
     },
     {
@@ -236,7 +236,7 @@
         "b"
       ],
       "commands": [
-        "workbench.action.focusSideBar"
+        "workbench.action.toggleSidebarVisibility",
       ]
     },
     {
