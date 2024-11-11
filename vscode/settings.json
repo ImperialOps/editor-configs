@@ -54,21 +54,19 @@
   "editor.wordWrap": "on",
   "editor.guides.indentation": false,
   // Vim setup
-  "vim.enableNeovim": false,
-  "vim.neovimUseConfigFile": true,
-  "vim.searchHighlightColor": "rgba(150, 255, 255, 0.3)",
   "vim.leader": "<space>",
+  "vim.easymotion": true,
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
   "vim.cursorStylePerMode.replace": "block-outline",
   "vim.cursorStylePerMode.visual": "block-outline",
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "vim.cursorStylePerMode.visualline": "block-outline",
-  "vim.easymotion": true,
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
+  "vim.searchHighlightColor": "rgba(150, 255, 255, 0.3)",
   "vim.hlsearch": false,
   "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
   "vim.handleKeys": {
     "<C-a>": true,
     "<C-d>": true,
@@ -112,23 +110,8 @@
         "<leader>",
         "s"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.files.save"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "w"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.closeActiveEditor"
-        }
+        "workbench.action.files.save"
       ]
     },
     {
@@ -136,35 +119,17 @@
         "<leader>",
         "a"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.files.saveFiles"
-        }
+        "workbench.action.files.saveFiles"
       ]
     },
     {
       "before": [
         "<leader>",
-        "n"
+        "w"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.focusSideBar"
-        }
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "b"
-      ],
-      "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.toggleSidebarVisibility"
-        }
+        "workbench.action.closeActiveEditor"
       ]
     },
     {
@@ -172,11 +137,8 @@
         "<leader>",
         "v"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.splitEditor"
-        }
+        "workbench.action.splitEditor"
       ]
     },
     {
@@ -184,11 +146,8 @@
         "<leader>",
         "x"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.splitEditorDown"
-        }
+        "workbench.action.splitEditorDown"
       ]
     },
     {
@@ -196,11 +155,8 @@
         "<leader>",
         "e"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "editor.action.showHover"
-        }
+        "editor.action.showHover"
       ]
     },
     {
@@ -209,11 +165,8 @@
         "p",
         "f"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.quickOpen"
-        }
+        "workbench.action.quickOpen"
       ]
     },
     {
@@ -222,11 +175,8 @@
         "p",
         "x"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.view.extensions"
-        }
+        "workbench.view.extensions"
       ]
     },
     {
@@ -235,11 +185,8 @@
         "p",
         "e"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.view.explorer"
-        }
+        "workbench.view.explorer"
       ]
     },
     {
@@ -248,11 +195,8 @@
         "p",
         "n"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "welcome.showNewFileEntries"
-        }
+        "welcome.showNewFileEntries"
       ]
     },
     {
@@ -261,11 +205,8 @@
         "p",
         "s"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.replaceInFiles"
-        }
+        "workbench.action.replaceInFiles"
       ]
     },
     {
@@ -274,84 +215,73 @@
         "g",
         "c"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "continue.focusContinueInputWithoutClear"
-        }
+        "workbench.panel.chat.view.copilot.focus"
       ]
     },
     {
       "before": [
         "<leader>",
         "p",
-        "c"
+        "q"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.closeSidebar"
-        },
+        "workbench.action.toggleSidebarVisibility"
       ]
     },
     {
       "before": [
         "<leader>",
-        "0"
+        "p",
+        "b"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-        }
+        "workbench.action.focusSideBar"
       ]
     },
     {
       "before": [
         "<leader>",
-        "1"
+        "tab"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.focusFirstEditorGroup"
-        }
+        "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
       ]
     },
     {
       "before": [
         "<leader>",
-        "2"
+        "h"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.focusSecondEditorGroup"
-        }
+        "workbench.action.focusLeftGroup"
       ]
     },
     {
       "before": [
         "<leader>",
-        "3"
+        "l"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.focusThirdEditorGroup"
-        }
+        "workbench.action.focusRightGroup"
       ]
     },
     {
       "before": [
         "<leader>",
-        "4"
+        "j"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "workbench.action.focusFourthEditorGroup"
-        }
+        "workbench.action.focusBelowGroup"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "k"
+      ],
+      "commands": [
+        "workbench.action.focusAboveGroup"
       ]
     }
   ],
@@ -394,4 +324,10 @@
   },
   "workbench.activityBar.location": "hidden",
   "dart.flutterSdkPath": "/Users/joshb/workspace/flutter/flutter",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
 }
