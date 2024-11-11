@@ -1,11 +1,4 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
-    {
-        "key": "ctrl+e",
-        "command": "workbench.action.tasks.runTask",
-        "args": "focus",
-        "when": ""
-    },
     {
         "key": "ctrl+j",
         "command": "selectNextSuggestion",
