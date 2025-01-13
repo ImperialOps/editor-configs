@@ -7,8 +7,8 @@ lsp.ensure_installed({
   'gopls',
   'terraformls',
   'jedi_language_server',
-  'tsserver',
-  'rust_analyzer',
+  'eslint',
+  'astro',
   'lua_ls',
   'tailwindcss',
 })
