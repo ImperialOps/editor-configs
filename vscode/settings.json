@@ -2,11 +2,6 @@
   "telemetry.telemetryLevel": "off",
   "breadcrumbs.enabled": false,
   "extensions.ignoreRecommendations": true,
-  "workbench.colorCustomizations": {
-    // "editorError.foreground": "#3a2525",
-    // "editorWarning.foreground": "#00000000",
-    // "editorInfo.foreground": "#00000000",
-  },
   "workbench.enableExperiments": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Default Dark+",
@@ -15,7 +10,7 @@
   "explorer.confirmDelete": false,
   "explorer.autoReveal": false,
   "window.closeWhenEmpty": true,
-  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
   "diffEditor.renderSideBySide": false,
   "diffEditor.renderIndicators": false,
   "editor.scrollbar.vertical": "hidden",
@@ -25,9 +20,7 @@
   "editor.hideCursorInOverviewRuler": true,
   "editor.overviewRulerBorder": false,
   "editor.glyphMargin": false,
-  // This is for making the base-atelier-dune theme looks smooth on the variables
   "editor.tokenColorCustomizations": {
-    //"variables": "#a6a28c",
     "comments": "#2ea542",
   },
   // Suggestions
@@ -302,7 +295,6 @@
     "-v"
   ],
   "go.useLanguageServer": true,
-  "go.autocompleteUnimportedPackages": true,
   "go.testEnvFile": "",
   "go.toolsManagement.autoUpdate": true,
   "[json]": {
