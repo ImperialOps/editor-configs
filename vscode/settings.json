@@ -212,6 +212,15 @@
     {
       "before": [
         "<leader>",
+        "i"
+      ],
+      "commands": [
+        "inlineChat.startWithCurrentLine"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
         "c"
       ],
       "commands": [
