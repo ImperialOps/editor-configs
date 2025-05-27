@@ -9,6 +9,7 @@ lsp.ensure_installed({
   'jedi_language_server',
   'eslint',
   'astro',
+  'rust_analyzer',
   'lua_ls',
   'tailwindcss',
 })
