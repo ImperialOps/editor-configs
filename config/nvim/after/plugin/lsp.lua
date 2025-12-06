@@ -1,75 +1,134 @@
-local lsp = require("lsp-zero")
+-- ============================================================================
+-- 💡 Simplified Native LSP Setup
+-- ============================================================================
 
-lsp.preset("recommended")
+-- 1. Setup Keymappings and Diagnostics (on_attach function)
+local on_attach = function(client, bufnr)
+    local opts = { buffer = bufnr, remap = false }
 
-lsp.ensure_installed({
-  'bashls',
-  'gopls',
-  'terraformls',
-  'jedi_language_server',
-  'eslint',
-  'astro',
-  'rust_analyzer',
-  'lua_ls',
-  'tailwindcss',
-})
-
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
-  ['<C-i>'] = cmp.mapping.scroll_docs(-4),
-  ['<C-u>'] = cmp.mapping.scroll_docs(4),
-  ['<C-e>'] = cmp.mapping.abort(),
-})
-
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
-
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
-})
-
-lsp.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
+    -- Simplified keymap definition using a table structure
+    local lsp_keymaps = {
+        -- Normal Mode (n)
+        ['n'] = {
+            -- LSP Functions
+            ['gd'] = vim.lsp.buf.definition,
+            ['K'] = vim.lsp.buf.hover,
+            ['<leader>e'] = vim.diagnostic.open_float,
+            ['<leader>vws'] = vim.lsp.buf.workspace_symbol,
+            ['<leader>vca'] = vim.lsp.buf.code_action,
+            ['<leader>vrr'] = vim.lsp.buf.references,
+            ['<leader>vrn'] = vim.lsp.buf.rename,
+        },
+        -- Insert Mode (i)
+        ['i'] = {
+            ['<C-h>'] = vim.lsp.buf.signature_help,
+        }
     }
-})
 
-lsp.on_attach(function(_, bufnr)
-  local opts = {buffer = bufnr, remap = false}
+    -- Set the keymaps efficiently
+    for mode, maps in pairs(lsp_keymaps) do
+        for key, func in pairs(maps) do
+            vim.keymap.set(mode, key, func, opts)
+        end
+    end
+    
+    -- Optional: Explicitly enable the LSP client
+    vim.lsp.enable(client.name, bufnr)
+end
 
-  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-  vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float() end, opts)
-  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-  vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-end)
-
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
-require('lspconfig').terraformls.setup{}
-vim.api.nvim_create_autocmd({"BufWritePre"}, {
-  pattern = {"*.tf", "*.tfvars"},
-  callback = function()
-    vim.lsp.buf.format()
-  end,
-})
-
-lsp.setup()
-
+---
+-- 2. Setup Diagnostic Icons and Appearance
+-- This is cleaner and ensures the signs/icons match your original intent.
 vim.diagnostic.config({
-    virtual_text = true
+    virtual_text = true,
+    signs = {
+        text = {
+            error = 'E',
+            warn = 'W',
+            hint = 'H',
+            info = 'I'
+        },
+    },
+})
+
+---
+-- 3. Setup nvim-cmp
+local cmp = require('cmp')
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
+local cmp_mappings = cmp.mapping.preset.insert({
+    ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ['<C-i>'] = cmp.mapping.scroll_docs(-4), -- Original <C-i>
+    ['<C-u>'] = cmp.mapping.scroll_docs(4),  -- Original <C-u>
+    ['<C-e>'] = cmp.mapping.abort(),
+})
+
+cmp.setup({
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'path' },
+    }, {
+        { name = 'buffer' },
+    }),
+    mapping = cmp_mappings,
+})
+
+---
+-- 4. Define and Configure LSPs (General Setup)
+local base_config = {
+    on_attach = on_attach,
+    -- Add any global settings here if all servers need them
+}
+
+local servers = {
+    'bashls',
+    'gopls',
+    'terraformls',
+    'jedi_language_server',
+    'eslint',
+    'astro',
+    'rust_analyzer',
+    'tailwindcss',
+}
+
+-- Single, clean loop to configure and enable all servers
+for _, server in ipairs(servers) do
+    vim.lsp.config(server, base_config)
+    vim.lsp.enable(server) 
+end
+
+---
+-- 5. Special Configuration for lua_ls
+local lua_ls_config = {
+    on_attach = on_attach,
+    settings = {
+        Lua = {
+            runtime = { version = 'LuaJIT' },
+            diagnostics = { globals = {'vim'} },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true), 
+                checkThirdParty = false,
+            },
+            telemetry = { enable = false },
+        },
+    }
+}
+
+vim.lsp.config('lua_ls', lua_ls_config)
+vim.lsp.enable('lua_ls')
+
+---
+-- 6. Special Configuration for terraformls formatting (Autocmd)
+vim.api.nvim_create_autocmd({"BufWritePre"}, {
+    pattern = {"*.tf", "*.tfvars"},
+    callback = function()
+        -- Use the simplified/filtered format call
+        vim.lsp.buf.format({
+            filter = function(client)
+                return client.name == 'terraformls'
+            end
+        })
+    end,
 })
