@@ -1,7 +1,3 @@
--- ============================================================================
--- 💡 Simplified Native LSP Setup
--- ============================================================================
-
 -- 1. Setup Keymappings and Diagnostics (on_attach function)
 local on_attach = function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
