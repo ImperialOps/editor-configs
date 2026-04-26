@@ -1,4 +1,5 @@
 {
+    // UI + shell behavior
     "breadcrumbs.enabled": false,
     "extensions.ignoreRecommendations": true,
     "workbench.enableExperiments": false,
@@ -11,6 +12,7 @@
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "diffEditor.renderSideBySide": false,
     "diffEditor.renderIndicators": false,
+    // Core editor UX
     "editor.scrollbar.vertical": "hidden",
     "editor.scrollbar.horizontal": "hidden",
     "editor.fontSize": 14,
@@ -43,6 +45,9 @@
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     "editor.wordWrap": "on",
     "editor.guides.indentation": false,
+    "workbench.activityBar.location": "hidden",
+
+    // Vim config + keymaps
     "vim.leader": "<space>",
     "vim.easymotion": true,
     "vim.cursorStylePerMode.insert": "line",
@@ -284,9 +289,11 @@
             ]
         }
     ],
+    // Language + formatter defaults
     "javascript.format.enable": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
+    // Language-specific overrides
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -312,7 +319,5 @@
     },
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "workbench.activityBar.location": "hidden",
-    "dart.flutterSdkPath": "/Users/joshb/workspace/flutter/flutter",
+    }
 }
