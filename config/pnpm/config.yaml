@@ -1,0 +1,10 @@
+minimumReleaseAge: 10080 # 7 days in minutes
+
+# Fail the install if NO version satisfies the age gate (Strict Mode)
+# Default is true if you configure it manually, false if using the built-in 24h default.
+minimumReleaseAgeStrict: true
+
+# Exclude trusted packages from the delay (e.g., fast internal updates)
+minimumReleaseAgeExclude:
+  - react
+  - webpack
