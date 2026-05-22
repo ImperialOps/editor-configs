@@ -19,6 +19,7 @@ require("lazy").setup({
     { 'preservim/nerdcommenter' },
     { 'mbbill/undotree' },
     { 'theprimeagen/harpoon' },
+    { 'neovim/nvim-lspconfig' },
 
     -- Telescope
     {
