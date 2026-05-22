@@ -29,6 +29,11 @@ local cmp_mappings = cmp.mapping.preset.insert({
 })
 
 cmp.setup({
+    snippet = {
+        expand = function(args)
+            vim.snippet.expand(args.body)
+        end,
+    },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'path' },
@@ -38,7 +43,6 @@ cmp.setup({
     mapping = cmp_mappings,
 })
 
--- Advertise cmp capabilities to native LSP client
 local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
 local has_cmp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if has_cmp then
@@ -46,10 +50,8 @@ if has_cmp then
 end
 
 -- ========================================================================== --
--- 3. GLOBAL KEYMAPS (NATIVE BUILTIN WAY)
+-- 3. LSP KEYMAPS
 -- ========================================================================== --
--- Neovim 0.11 recommendation: Bind keys globally or via LspAttach autocmd.
--- Using LspAttach ensures keymaps only exist where an LSP client is active.
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function(event)
@@ -79,42 +81,67 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- ========================================================================== --
--- 4. LSP SERVER CORES & CONFIGURATION (NEOVIM v0.11+)
+-- 4. LSP SERVERS
 -- ========================================================================== --
-local base_config = {
+local common = {
     capabilities = lsp_capabilities,
+    root_markers = { '.git' },
 }
 
-local servers = {
-    'bashls',
-    'gopls',
-    'terraformls',
-    'pyright',
-    'ocamllsp',
-}
+vim.lsp.config('bashls', vim.tbl_deep_extend("force", common, {
+    root_markers = { '.git', '.bashrc', '.bash_profile' },
+}))
+vim.lsp.enable('bashls')
 
--- Configure and enable standard servers
-for _, server in ipairs(servers) do
-    vim.lsp.config(server, base_config)
-    vim.lsp.enable(server) 
-end
+vim.lsp.config('gopls', vim.tbl_deep_extend("force", common, {
+    root_markers = { 'go.mod', 'go.work', '.git' },
+}))
+vim.lsp.enable('gopls')
+
+vim.lsp.config('terraformls', vim.tbl_deep_extend("force", common, {
+    root_markers = { '.terraform', '.git' },
+}))
+vim.lsp.enable('terraformls')
+
+vim.lsp.config('basedpyright', vim.tbl_deep_extend("force", common, {
+    cmd = { 'basedpyright-langserver', '--stdio' },
+    filetypes = { 'python' },
+    root_markers = { 'pyproject.toml', 'uv.lock', 'pyrightconfig.json', '.git' },
+    settings = {
+        python = {
+            pythonPath = '.venv/bin/python',
+        },
+        basedpyright = {
+            analysis = {
+                configFilePath = vim.fn.findfile('pyproject.toml', '.;'),
+                diagnosticMode = 'openFilesOnly',
+                autoImportCompletions = true,
+            }
+        }
+    }
+}))
+vim.lsp.enable('basedpyright')
+
+vim.lsp.config('ocamllsp', vim.tbl_deep_extend("force", common, {
+    root_markers = { 'dune-project', 'dune-workspace', '.ocamlformat', '.git' },
+}))
+vim.lsp.enable('ocamllsp')
 
 -- ========================================================================== --
--- 5. LUA_LS CUSTOM TARGET SETUP
+-- 5. LUA_LS
 -- ========================================================================== --
-local lua_ls_config = vim.tbl_deep_extend("force", base_config, {
+vim.lsp.config('lua_ls', vim.tbl_deep_extend("force", common, {
+    root_markers = { '.luarc.json', '.luarc.jsonc', '.git' },
     settings = {
         Lua = {
             runtime = { version = 'LuaJIT' },
             diagnostics = { globals = {'vim'} },
             workspace = {
-                library = vim.api.nvim_get_runtime_file("", true), 
+                library = vim.api.nvim_get_runtime_file("", true),
                 checkThirdParty = false,
             },
             telemetry = { enable = false },
         },
     }
-})
-
-vim.lsp.config('lua_ls', lua_ls_config)
+}))
 vim.lsp.enable('lua_ls')
