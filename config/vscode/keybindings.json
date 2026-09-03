@@ -10,6 +10,11 @@
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
+        "key": "ctrl+y",
+        "command": "acceptSelectedSuggestion",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
         "key": "ctrl+shift+p",
         "command": "workbench.action.showCommands",
         "when": ""
@@ -18,10 +23,5 @@
         "key": "ctrl+'",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "terminal.active"
-    },
-    {
-        "key": "ctrl+`",
-        "command": "-workbench.action.terminal.toggleTerminal",
-        "when": "terminal.active"
-    },
+    }
 ]
