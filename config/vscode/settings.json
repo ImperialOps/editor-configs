@@ -25,7 +25,7 @@
   },
   // Suggestions
   "editor.wordBasedSuggestions": "off",
-  "editor.acceptSuggestionOnEnter": "on",
+  "editor.acceptSuggestionOnEnter": "off",
   "editor.quickSuggestions": {
     "other": true,
     "comments": false,
