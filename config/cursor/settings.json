@@ -24,7 +24,7 @@
         "comments": "#2ea542"
     },
     "editor.wordBasedSuggestions": "off",
-    "editor.acceptSuggestionOnEnter": "on",
+    "editor.acceptSuggestionOnEnter": "off",
     "editor.quickSuggestions": {
         "other": true,
         "comments": false,
